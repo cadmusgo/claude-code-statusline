@@ -8,33 +8,21 @@ Turn the blank status bar into a real-time dashboard: model, context usage with 
 
 ## Preview
 
-### Normal — Context at 42%, everything is fine
+**Normal** — Context at 42%, everything is fine
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Claude Opus 4.6</span> │ <span style="color:#2ECC71">█</span><span style="color:#74C359">█</span><span style="color:#BABA40">█</span><span style="color:#F1C40F">█</span><span style="color:#3C3C3C">░░░░░░</span> <span style="color:#2ECC71">42%</span> │ <span style="color:#F1C40F">$0.85</span> │ <span style="color:#888">3m42s</span> │ <span style="color:#888">5h:15% 7d:8%</span>
-<span style="color:#888">⎇main*</span> │ <span style="color:#2ECC71">+150</span>/<span style="color:#E74C3C">-30</span> │ <span style="color:#3498DB">my-project</span>
-</pre>
+![Normal](docs/images/normal.svg)
 
-### Warning — Context at 75%, pay attention
+**Warning** — Context at 75%, pay attention
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Claude Sonnet 4.6</span> │ <span style="color:#2ECC71">█</span><span style="color:#74C359">█</span><span style="color:#BABA40">█</span><span style="color:#F1C40F">█</span><span style="color:#EFA118">█</span><span style="color:#EC7E22">█</span><span style="color:#E9652C">█</span><span style="color:#3C3C3C">░░░</span> <span style="color:#F1C40F">75%</span> <span style="color:#888">200k</span> │ <span style="color:#F1C40F">$3.20</span> │ <span style="color:#888">12m5s</span> │ <span style="color:#888">5h:48%</span>
-<span style="color:#888">⎇feat/auth*</span> │ <span style="color:#2ECC71">+280</span>/<span style="color:#E74C3C">-45</span> │ <span style="color:#3498DB">my-project</span>
-</pre>
+![Warning](docs/images/warning.svg)
 
-### Danger — Context at 92%, almost full
+**Danger** — Context at 92%, almost full
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Claude Opus 4.6</span> │ <span style="color:#2ECC71">█</span><span style="color:#74C359">█</span><span style="color:#BABA40">█</span><span style="color:#F1C40F">█</span><span style="color:#EFA118">█</span><span style="color:#EC7E22">█</span><span style="color:#E9652C">█</span><span style="color:#E74C3C">█</span><span style="color:#D34232">█</span><span style="color:#3C3C3C">░</span> <span style="color:#E74C3C">92% ⚠</span> <span style="color:#888">1M</span> │ <span style="color:#E74C3C">$15.30</span> │ <span style="color:#888">45m12s</span> │ <span style="color:#E74C3C">5h:85%</span> <span style="color:#888">7d:62%</span>
-<span style="color:#888">⎇main</span> │ <span style="color:#2ECC71">+500</span>/<span style="color:#E74C3C">-120</span> │ <span style="color:#3498DB">api-server</span>
-</pre>
+![Danger](docs/images/danger.svg)
 
-### Startup — Clean, no noise
+**Startup** — Clean, no noise
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Opus 4.6 (1M context)</span> │ <span style="color:#3C3C3C">░░░░░░░░░░</span> <span style="color:#2ECC71">0%</span> │ <span style="color:#888">$0.00</span>
-<span style="color:#3498DB">claude-temp</span>
-</pre>
+![Startup](docs/images/startup.svg)
 
 ## Features
 

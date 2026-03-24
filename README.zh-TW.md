@@ -8,33 +8,21 @@
 
 ## 預覽
 
-### 正常狀態 — 上下文 42%，一切正常
+**正常狀態** — 上下文 42%，一切正常
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Claude Opus 4.6</span> │ <span style="color:#2ECC71">█</span><span style="color:#74C359">█</span><span style="color:#BABA40">█</span><span style="color:#F1C40F">█</span><span style="color:#3C3C3C">░░░░░░</span> <span style="color:#2ECC71">42%</span> │ <span style="color:#F1C40F">$0.85</span> │ <span style="color:#888">3m42s</span> │ <span style="color:#888">5h:15% 7d:8%</span>
-<span style="color:#888">⎇main*</span> │ <span style="color:#2ECC71">+150</span>/<span style="color:#E74C3C">-30</span> │ <span style="color:#3498DB">my-project</span>
-</pre>
+![正常](docs/images/normal.svg)
 
-### 警告狀態 — 上下文 75%，該留意了
+**警告狀態** — 上下文 75%，該留意了
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Claude Sonnet 4.6</span> │ <span style="color:#2ECC71">█</span><span style="color:#74C359">█</span><span style="color:#BABA40">█</span><span style="color:#F1C40F">█</span><span style="color:#EFA118">█</span><span style="color:#EC7E22">█</span><span style="color:#E9652C">█</span><span style="color:#3C3C3C">░░░</span> <span style="color:#F1C40F">75%</span> <span style="color:#888">200k</span> │ <span style="color:#F1C40F">$3.20</span> │ <span style="color:#888">12m5s</span> │ <span style="color:#888">5h:48%</span>
-<span style="color:#888">⎇feat/auth*</span> │ <span style="color:#2ECC71">+280</span>/<span style="color:#E74C3C">-45</span> │ <span style="color:#3498DB">my-project</span>
-</pre>
+![警告](docs/images/warning.svg)
 
-### 危險狀態 — 上下文 92%，快爆了
+**危險狀態** — 上下文 92%，快爆了
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Claude Opus 4.6</span> │ <span style="color:#2ECC71">█</span><span style="color:#74C359">█</span><span style="color:#BABA40">█</span><span style="color:#F1C40F">█</span><span style="color:#EFA118">█</span><span style="color:#EC7E22">█</span><span style="color:#E9652C">█</span><span style="color:#E74C3C">█</span><span style="color:#D34232">█</span><span style="color:#3C3C3C">░</span> <span style="color:#E74C3C">92% ⚠</span> <span style="color:#888">1M</span> │ <span style="color:#E74C3C">$15.30</span> │ <span style="color:#888">45m12s</span> │ <span style="color:#E74C3C">5h:85%</span> <span style="color:#888">7d:62%</span>
-<span style="color:#888">⎇main</span> │ <span style="color:#2ECC71">+500</span>/<span style="color:#E74C3C">-120</span> │ <span style="color:#3498DB">api-server</span>
-</pre>
+![危險](docs/images/danger.svg)
 
-### Session 剛啟動 — 乾乾淨淨，零噪音
+**Session 剛啟動** — 乾乾淨淨，零噪音
 
-<pre>
-<span style="color:#7266EA">◆</span> <span style="color:#5BC0DE">Opus 4.6 (1M context)</span> │ <span style="color:#3C3C3C">░░░░░░░░░░</span> <span style="color:#2ECC71">0%</span> │ <span style="color:#888">$0.00</span>
-<span style="color:#3498DB">claude-temp</span>
-</pre>
+![啟動](docs/images/startup.svg)
 
 ## 功能
 
