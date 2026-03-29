@@ -55,6 +55,8 @@ if [[ "$USE_ASCII" == "1" ]]; then
   S_PROMPT=">"
   S_TIME=""
   S_COST=""
+  S_OPEN_EDITOR="[e]"
+  S_OPEN_DIR="[d]"
   SEP=" | "
 elif [[ "$USE_NERDFONT" == "1" ]]; then
   S_BRAND="◆"
@@ -63,6 +65,8 @@ elif [[ "$USE_NERDFONT" == "1" ]]; then
   S_PROMPT="❯"
   S_TIME="󰔟 "
   S_COST=" "
+  S_OPEN_EDITOR=" "
+  S_OPEN_DIR="󰝰 "
   if [[ "$USE_POWERLINE" == "1" ]]; then
     SEP="  "
   else
@@ -75,12 +79,29 @@ else
   S_PROMPT="❯"
   S_TIME=""
   S_COST=""
+  S_OPEN_EDITOR="⌨ "
+  S_OPEN_DIR="📂"
   if [[ "$USE_POWERLINE" == "1" ]]; then
     SEP="  "
   else
     SEP=" │ "
   fi
 fi
+
+# ═══════════════════════════════════════════════════════════════
+# OSC 8 超連結工具
+# ═══════════════════════════════════════════════════════════════
+
+# URL 路徑編碼（處理空格等特殊字元）
+url_encode_path() {
+  printf '%s' "$1" | sed 's/ /%20/g; s/#/%23/g; s/?/%3F/g; s/&/%26/g'
+}
+
+# OSC 8 超連結產生器（不支援的終端自動忽略）
+# 用法: osc8_link <url> <visible_text>
+osc8_link() {
+  printf '\033]8;;%s\a%s\033]8;;\a' "$1" "$2"
+}
 
 # ═══════════════════════════════════════════════════════════════
 # 降級輸出
@@ -340,7 +361,15 @@ fi
 if [[ -n "$lines_section" ]]; then
   parts+=("${lines_section}")
 fi
-parts+=("${BLUE}${dir}${RST}")
+# 可點擊目錄區域：VS Code 開啟 + Finder 開啟
+if [[ "$cwd_full" == /* ]]; then
+  encoded_path=$(url_encode_path "$cwd_full")
+  dir_vscode="$(osc8_link "vscode://file${encoded_path}" "${BLUE}${S_OPEN_EDITOR}${dir}${RST}")"
+  dir_finder="$(osc8_link "file://${encoded_path}" "${DIM}${S_OPEN_DIR}${RST}")"
+  parts+=("${dir_vscode} ${dir_finder}")
+else
+  parts+=("${BLUE}${dir}${RST}")
+fi
 
 # Agent / Worktree 指示器（僅在非主 session 時顯示）
 if [[ -n "${wt_name:-}" ]]; then
