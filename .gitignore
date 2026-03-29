@@ -6,3 +6,18 @@
 docs/fb-post-draft.md
 node_modules/
 docs/claude-code-statusline.pdf
+
+# 機密檔案防護
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.secret
+*_rsa
+*_ed25519
+credentials.json
+service-account*.json
+CLAUDE.local.md
